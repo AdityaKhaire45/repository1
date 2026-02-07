@@ -1,0 +1,23 @@
+name: Python CI - Hello World
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        [cite_start]uses: actions/checkout@v4 # Downloads your repo onto the runner [cite: 43]
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          [cite_start]python-version: '3.12' # Specifies the Python version to use [cite: 50]
+
+      - name: Run hello.py
+        [cite_start]run: python hello.py # Executes your script [cite: 54, 56]
